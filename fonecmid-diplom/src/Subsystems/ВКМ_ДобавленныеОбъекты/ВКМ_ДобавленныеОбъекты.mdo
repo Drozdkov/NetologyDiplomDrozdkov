@@ -12,4 +12,6 @@
   <content>Catalog.ВКМ_ОбслуживаниеКлиентаПрисоединенныеФайлы</content>
   <content>Role.ВКМ_МенеджерПоОбслуживаюКлиентов</content>
   <content>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы</content>
+  <content>Constant.ВКМ_ТокенУправленияТелеграмБотом</content>
+  <content>Constant.ВКМ_ИдентификаторГруппыОповещенияВТелеграм</content>
 </mdclass:Subsystem>

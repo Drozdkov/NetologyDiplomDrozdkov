@@ -7,4 +7,9 @@
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <content>DefinedType.ВКМ_Валюта</content>
+  <content>Document.ВКМ_ОбслуживаниеКлиента</content>
+  <content>Catalog.ВКМ_ВидыРаботПоЗаявкамКлиентов</content>
+  <content>Catalog.ВКМ_ОбслуживаниеКлиентаПрисоединенныеФайлы</content>
+  <content>Role.ВКМ_МенеджерПоОбслуживаюКлиентов</content>
+  <content>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы</content>
 </mdclass:Subsystem>

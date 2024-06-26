@@ -131,7 +131,6 @@
         </extInfo>
       </extendedTooltip>
       <type>UsualButton</type>
-      <commandName>CommonCommand.ВКМ_УДАЛИТЬ_РассылкаУведомленийВТелеграм</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>

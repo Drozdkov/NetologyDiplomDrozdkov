@@ -404,4 +404,12 @@
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
   </tabularSections>
+  <templates uuid="fcb97c10-90c2-4778-8333-dc85d74117a1">
+    <name>ПФ_DOC_АктВыполненныхРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Акт выполненных работ</value>
+    </synonym>
+    <templateType>BinaryData</templateType>
+  </templates>
 </mdclass:Document>

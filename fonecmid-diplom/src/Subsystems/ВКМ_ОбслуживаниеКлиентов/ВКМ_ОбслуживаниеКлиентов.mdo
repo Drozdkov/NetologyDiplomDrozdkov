@@ -8,7 +8,7 @@
   <includeHelpInContents>true</includeHelpInContents>
   <includeInCommandInterface>true</includeInCommandInterface>
   <picture xsi:type="core:PictureRef">
-    <picture>CommonPicture.ВставитьИзБуфераОбмена</picture>
+    <picture>CommonPicture.СостоянияРасширенийПодключено</picture>
   </picture>
   <content>Catalog.ВКМ_ВидыРаботПоЗаявкамКлиентов</content>
   <content>Document.ВКМ_ОбслуживаниеКлиента</content>

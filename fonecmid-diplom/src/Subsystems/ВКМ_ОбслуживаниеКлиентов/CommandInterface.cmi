@@ -15,17 +15,35 @@
       <group>NavigationPanelImportant</group>
       <commands>Document.ВКМ_ОбслуживаниеКлиента.StandardCommand.OpenList</commands>
     </placementFragments>
+    <placementFragments>
+      <group>ActionsPanelCreate</group>
+      <commands>DataProcessor.ВКМ_МассовоеСозданиеДокументовРеализацияТоваровИУслуг.StandardCommand.Open</commands>
+    </placementFragments>
+    <placementFragments>
+      <group>NavigationPanelSeeAlso</group>
+      <commands>Catalog.ВКМ_ВидыРаботПоЗаявкамКлиентов.StandardCommand.OpenList</commands>
+    </placementFragments>
   </commandsPlacement>
   <commandsOrder>
     <orderFragments>
       <group>NavigationPanelOrdinary</group>
-      <commands>Catalog.ВКМ_ВидыРаботПоЗаявкамКлиентов.StandardCommand.OpenList</commands>
       <commands>Catalog.ВКМ_УведомленияВТелеграм.StandardCommand.OpenList</commands>
       <commands>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы.StandardCommand.OpenList</commands>
     </orderFragments>
     <orderFragments>
       <group>NavigationPanelImportant</group>
       <commands>Document.ВКМ_ОбслуживаниеКлиента.StandardCommand.OpenList</commands>
+    </orderFragments>
+    <orderFragments>
+      <group>ActionsPanelCreate</group>
+      <commands>Catalog.ВКМ_ВидыРаботПоЗаявкамКлиентов.StandardCommand.Create</commands>
+      <commands>Catalog.ВКМ_УведомленияВТелеграм.StandardCommand.Create</commands>
+      <commands>Document.ВКМ_ОбслуживаниеКлиента.StandardCommand.Create</commands>
+      <commands>DataProcessor.ВКМ_МассовоеСозданиеДокументовРеализацияТоваровИУслуг.StandardCommand.Open</commands>
+    </orderFragments>
+    <orderFragments>
+      <group>NavigationPanelSeeAlso</group>
+      <commands>Catalog.ВКМ_ВидыРаботПоЗаявкамКлиентов.StandardCommand.OpenList</commands>
     </orderFragments>
   </commandsOrder>
 </cmi:CommandInterface>

@@ -56,21 +56,6 @@
     <dataHistory>Use</dataHistory>
     <fillValue xsi:type="core:UndefinedValue"/>
   </resources>
-  <resources uuid="9ea0bba3-5408-43a7-9f16-6083b51a1c5d">
-    <name>ВидРабот</name>
-    <synonym>
-      <key>ru</key>
-      <value>Вид работ</value>
-    </synonym>
-    <type>
-      <types>CatalogRef.ВКМ_ВидыРаботПоЗаявкамКлиентов</types>
-    </type>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:UndefinedValue"/>
-  </resources>
   <attributes uuid="2f149211-e0ae-488f-a722-c80f42b4c2c1">
     <name>Комментарий</name>
     <synonym>
@@ -113,6 +98,22 @@
     </synonym>
     <type>
       <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8519cda8-2cce-463d-9ee3-4a393bfeb56d">
+    <name>ВидРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид работ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВКМ_ВидыРаботПоЗаявкамКлиентов</types>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>

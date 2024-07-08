@@ -19,4 +19,7 @@
   <content>Constant.ВКМ_НоменклатураАбонентскаяПлата</content>
   <content>Constant.ВКМ_НоменклатураВыполненныеРаботы</content>
   <content>DataProcessor.ВКМ_МассовоеСозданиеДокументовРеализацияТоваровИУслуг</content>
+  <content>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</content>
+  <content>Enum.ВКМ_КатегорииСотрудников</content>
+  <content>AccumulationRegister.ВКМ_ВыполненныеСотрудникомРаботы</content>
 </mdclass:Subsystem>

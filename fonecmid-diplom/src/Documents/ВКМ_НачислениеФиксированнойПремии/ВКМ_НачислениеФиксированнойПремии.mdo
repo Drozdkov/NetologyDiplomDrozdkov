@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c72e6027-b0e4-457b-a48d-9cb5cf8885a2">
+  <producedTypes>
+    <objectType typeId="b34e8015-49a8-4285-9523-04f858b95d32" valueTypeId="84c491c0-4f5a-4295-93fd-2308fbc31ebb"/>
+    <refType typeId="bea10f46-9e47-4bbf-a2c2-b9f714d3ea33" valueTypeId="84ff66ef-db11-40d5-9fe0-db15191ae30b"/>
+    <selectionType typeId="de2d5253-caef-470d-9156-1d8de7bb1f66" valueTypeId="13b32640-ac02-4fea-a678-ad3404da70d8"/>
+    <listType typeId="b74927ae-caf4-4bd3-9518-2ffb908a0acb" valueTypeId="3b55e051-ece6-45dc-aa86-6226621730d0"/>
+    <managerType typeId="4952bce0-2248-4afd-8e03-afe43cb84b48" valueTypeId="abd9afe6-31b7-43f3-a8a1-66cd4ed38901"/>
+  </producedTypes>
+  <name>ВКМ_НачислениеФиксированнойПремии</name>
+  <synonym>
+    <key>ru</key>
+    <value>ВКМ начисление фиксированной премии</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ВКМ_НачислениеФиксированнойПремии.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <registerRecords>CalculationRegister.ВКМ_ДополнительныеНачисления</registerRecords>
+  <registerRecords>CalculationRegister.ВКМ_Удержания</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+</mdclass:Document>

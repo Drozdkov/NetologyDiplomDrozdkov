@@ -28,7 +28,6 @@
   <defaultListForm>Document.ВКМ_ОбслуживаниеКлиента.Form.ФормаСписка</defaultListForm>
   <registerRecords>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы</registerRecords>
   <registerRecords>AccumulationRegister.ВКМ_ВыполненныеСотрудникомРаботы</registerRecords>
-  <registerRecords>InformationRegister.ВКМ_УсловияОплатыСотрудников</registerRecords>
   <postInPrivilegedMode>true</postInPrivilegedMode>
   <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
   <attributes uuid="54ed5f92-3fa2-440e-961c-f23e45b81545">

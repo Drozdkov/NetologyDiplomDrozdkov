@@ -1236,6 +1236,8 @@
   <documents>Document.ПоступлениеТоваровУслуг</documents>
   <documents>Document.РеализацияТоваровУслуг</documents>
   <documents>Document.ВКМ_ОбслуживаниеКлиента</documents>
+  <documents>Document.ВКМ_НачисленияЗарплаты</documents>
+  <documents>Document.ВКМ_НачислениеФиксированнойПремии</documents>
   <documentJournals>DocumentJournal.Деньги</documentJournals>
   <enums>Enum.ВариантыОтображенияМеток</enums>
   <enums>Enum.ВариантыОчисткиФайлов</enums>
@@ -1404,4 +1406,9 @@
   <accumulationRegisters>AccumulationRegister.ВКМ_ВыполненныеСотрудникомРаботы</accumulationRegisters>
   <chartsOfCharacteristicTypes>ChartOfCharacteristicTypes.ДополнительныеРеквизитыИСведения</chartsOfCharacteristicTypes>
   <chartsOfCalculationTypes>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</chartsOfCalculationTypes>
+  <chartsOfCalculationTypes>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления</chartsOfCalculationTypes>
+  <chartsOfCalculationTypes>ChartOfCalculationTypes.ВКМ_Удержания</chartsOfCalculationTypes>
+  <calculationRegisters>CalculationRegister.ВКМ_ОсновныеНачисления</calculationRegisters>
+  <calculationRegisters>CalculationRegister.ВКМ_ДополнительныеНачисления</calculationRegisters>
+  <calculationRegisters>CalculationRegister.ВКМ_Удержания</calculationRegisters>
 </mdclass:Configuration>

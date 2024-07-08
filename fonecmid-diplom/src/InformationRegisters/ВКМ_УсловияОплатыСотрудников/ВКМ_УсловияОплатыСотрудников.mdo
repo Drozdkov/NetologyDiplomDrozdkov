@@ -16,8 +16,8 @@
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <editType>InDialog</editType>
-  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
-  <writeMode>RecorderSubordinate</writeMode>
+  <defaultRecordForm>InformationRegister.ВКМ_УсловияОплатыСотрудников.Form.ФормаВвода</defaultRecordForm>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
   <dataLockControlMode>Managed</dataLockControlMode>
   <resources uuid="791100b3-0059-4b99-9411-d65f3cd13a27">
     <name>Оклад</name>
@@ -40,15 +40,16 @@
     <fillValue xsi:type="core:UndefinedValue"/>
   </resources>
   <resources uuid="fcb1e996-d174-48e1-8235-213841cb61bd">
-    <name>ПремияПроцентом</name>
+    <name>ПроцентОтРабот</name>
     <synonym>
       <key>ru</key>
-      <value>Премия процентом</value>
+      <value>Процент от работ</value>
     </synonym>
     <type>
       <types>String</types>
       <stringQualifiers>
         <length>3</length>
+        <fixed>true</fixed>
       </stringQualifiers>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
@@ -89,11 +90,11 @@
     <fillValue xsi:type="core:UndefinedValue"/>
     <mainFilter>true</mainFilter>
   </dimensions>
-  <forms uuid="349092ea-ad28-4e6f-be18-532c8ff6b960">
-    <name>ФормаЗаписи</name>
+  <forms uuid="8ff45aec-efce-48e7-946c-505f52f0589d">
+    <name>ФормаВвода</name>
     <synonym>
       <key>ru</key>
-      <value>Форма записи</value>
+      <value>Форма ввода</value>
     </synonym>
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>

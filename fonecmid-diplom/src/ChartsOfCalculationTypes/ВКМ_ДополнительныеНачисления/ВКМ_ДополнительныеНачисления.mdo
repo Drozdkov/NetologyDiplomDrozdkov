@@ -16,7 +16,7 @@
   <name>ВКМ_ДополнительныеНачисления</name>
   <synonym>
     <key>ru</key>
-    <value>ВКМ дополнительные начисления</value>
+    <value>Дополнительные начисления</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <inputByString>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления.StandardAttribute.Code</inputByString>
@@ -32,7 +32,6 @@
   <defaultPresentation>AsDescription</defaultPresentation>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
-  <actionPeriodUse>true</actionPeriodUse>
   <predefined>
     <items id="e2400baf-8c38-413b-aa1d-8e4db00646a9">
       <name>ФиксированнаяПремия</name>

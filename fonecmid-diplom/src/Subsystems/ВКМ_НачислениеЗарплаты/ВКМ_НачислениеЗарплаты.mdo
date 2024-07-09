@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cc9009b5-1961-4e1c-898f-877a090e5d01">
+<mdclass:Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cc9009b5-1961-4e1c-898f-877a090e5d01">
   <name>ВКМ_НачислениеЗарплаты</name>
   <synonym>
     <key>ru</key>
-    <value>ВКМ начисление зарплаты</value>
+    <value>Начисление зарплаты</value>
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <includeInCommandInterface>true</includeInCommandInterface>
+  <picture xsi:type="core:PictureRef">
+    <picture>StdPicture.Dendrogram</picture>
+  </picture>
   <content>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</content>
   <content>InformationRegister.ВКМ_УсловияОплатыСотрудников</content>
   <content>Enum.ВКМ_КатегорииСотрудников</content>
@@ -18,4 +21,6 @@
   <content>CalculationRegister.ВКМ_ДополнительныеНачисления</content>
   <content>Document.ВКМ_НачислениеФиксированнойПремии</content>
   <content>CalculationRegister.ВКМ_Удержания</content>
+  <content>DataProcessor.ВКМ_ЗаполнениеГрафика</content>
+  <content>InformationRegister.ВКМ_ГрафикРаботы</content>
 </mdclass:Subsystem>

@@ -34,6 +34,7 @@
   <choiceMode>BothWays</choiceMode>
   <dependenceOnCalculationTypes>OnActionPeriod</dependenceOnCalculationTypes>
   <baseCalculationTypes>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</baseCalculationTypes>
+  <baseCalculationTypes>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления</baseCalculationTypes>
   <actionPeriodUse>true</actionPeriodUse>
   <predefined>
     <items id="4b6febf3-66ea-4520-8ba2-0a12a25db7c7">
@@ -51,8 +52,6 @@
         <value>2</value>
       </code>
       <displaced>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Отпуск</displaced>
-      <base>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Оклад</base>
-      <leading>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Оклад</leading>
     </items>
     <items id="50014b6d-52db-409d-85c1-bc31a2ad5025">
       <name>Отпуск</name>
@@ -62,8 +61,10 @@
       </code>
       <base>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Оклад</base>
       <base>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.ПремияПроцентом</base>
+      <base>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления.ФиксированнаяПремия</base>
       <leading>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Оклад</leading>
       <leading>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.ПремияПроцентом</leading>
+      <leading>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления.ФиксированнаяПремия</leading>
     </items>
   </predefined>
 </mdclass:ChartOfCalculationTypes>

@@ -32,4 +32,5 @@
   <content>CalculationRegister.ВКМ_Удержания</content>
   <content>DataProcessor.ВКМ_ЗаполнениеГрафика</content>
   <content>InformationRegister.ВКМ_ГрафикРаботы</content>
+  <content>AccumulationRegister.ВКМ_ВзаиморасчетыССотрудниками</content>
 </mdclass:Subsystem>

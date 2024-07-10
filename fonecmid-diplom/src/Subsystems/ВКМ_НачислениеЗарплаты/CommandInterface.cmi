@@ -25,16 +25,36 @@
         <common>true</common>
       </visible>
     </visibilityFragments>
+    <visibilityFragments>
+      <command>AccumulationRegister.ВКМ_ВзаиморасчетыССотрудниками.StandardCommand.OpenList</command>
+      <visible>
+        <common>true</common>
+      </visible>
+    </visibilityFragments>
+    <visibilityFragments>
+      <command>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления.StandardCommand.OpenList</command>
+      <visible/>
+    </visibilityFragments>
+    <visibilityFragments>
+      <command>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.StandardCommand.OpenList</command>
+      <visible/>
+    </visibilityFragments>
+    <visibilityFragments>
+      <command>ChartOfCalculationTypes.ВКМ_Удержания.StandardCommand.OpenList</command>
+      <visible/>
+    </visibilityFragments>
   </commandsVisibility>
   <commandsPlacement>
     <placementFragments>
       <group>NavigationPanelImportant</group>
       <commands>Document.ВКМ_НачисленияЗарплаты.StandardCommand.OpenList</commands>
+      <commands>Document.ВКМ_НачислениеФиксированнойПремии.StandardCommand.OpenList</commands>
     </placementFragments>
   </commandsPlacement>
   <commandsOrder>
     <orderFragments>
       <group>NavigationPanelImportant</group>
+      <commands>Document.ВКМ_НачислениеФиксированнойПремии.StandardCommand.OpenList</commands>
       <commands>Document.ВКМ_НачисленияЗарплаты.StandardCommand.OpenList</commands>
     </orderFragments>
   </commandsOrder>

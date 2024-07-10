@@ -24,10 +24,10 @@
   <chartOfCalculationTypes>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</chartOfCalculationTypes>
   <dataLockControlMode>Managed</dataLockControlMode>
   <resources uuid="98a352b6-f33c-4ede-af9b-e2d832f3652b">
-    <name>Результат</name>
+    <name>Сумма</name>
     <synonym>
       <key>ru</key>
-      <value>Результат</value>
+      <value>Сумма</value>
     </synonym>
     <type>
       <types>DefinedType.ВКМ_Валюта</types>

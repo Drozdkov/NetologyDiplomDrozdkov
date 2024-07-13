@@ -630,6 +630,10 @@
   <roles>Role.ВКМ_РаботаСДокументомОбслуживаниеКлиентов</roles>
   <roles>Role.ВКМ_РаботаСоСправочникомВидыРабот</roles>
   <roles>Role.ВКМ_МассовоеСозданиеДокументовРеализацияТоваровИУслуг</roles>
+  <roles>Role.ВКМ_ВводДанныхОбОтпусках</roles>
+  <roles>Role.ВКМ_ВводДанныхОбОкладахИПремиях</roles>
+  <roles>Role.ВКМ_ЗаполнениеДанныхГрафика</roles>
+  <roles>Role.ВКМ_НачислениеИВыплатаЗарплаты</roles>
   <commonTemplates>CommonTemplate.ДанныеПечатиОбщиеРеквизиты</commonTemplates>
   <commonTemplates>CommonTemplate.ДанныеПечатиРегистрСимволов</commonTemplates>
   <commonTemplates>CommonTemplate.ИнструкцияКакВыполнитьНастройкуМакетаOfficeOpen</commonTemplates>
@@ -1238,6 +1242,8 @@
   <documents>Document.ВКМ_ОбслуживаниеКлиента</documents>
   <documents>Document.ВКМ_НачисленияЗарплаты</documents>
   <documents>Document.ВКМ_НачислениеФиксированнойПремии</documents>
+  <documents>Document.ВКМ_ВыплатаЗарплаты</documents>
+  <documents>Document.ВКМ_ГрафикОтпусков</documents>
   <documentJournals>DocumentJournal.Деньги</documentJournals>
   <enums>Enum.ВариантыОтображенияМеток</enums>
   <enums>Enum.ВариантыОчисткиФайлов</enums>
@@ -1410,6 +1416,7 @@
   <chartsOfCalculationTypes>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления</chartsOfCalculationTypes>
   <chartsOfCalculationTypes>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления</chartsOfCalculationTypes>
   <chartsOfCalculationTypes>ChartOfCalculationTypes.ВКМ_Удержания</chartsOfCalculationTypes>
+  <chartsOfCalculationTypes>ChartOfCalculationTypes.ВКМ_Выплаты</chartsOfCalculationTypes>
   <calculationRegisters>CalculationRegister.ВКМ_ОсновныеНачисления</calculationRegisters>
   <calculationRegisters>CalculationRegister.ВКМ_ДополнительныеНачисления</calculationRegisters>
   <calculationRegisters>CalculationRegister.ВКМ_Удержания</calculationRegisters>

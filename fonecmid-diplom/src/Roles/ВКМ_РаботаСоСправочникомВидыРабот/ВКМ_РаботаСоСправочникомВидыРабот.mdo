@@ -3,6 +3,6 @@
   <name>ВКМ_РаботаСоСправочникомВидыРабот</name>
   <synonym>
     <key>ru</key>
-    <value>Работа со справочником &quot;Виды работ&quot;</value>
+    <value>ВКМ_Работа со справочником &quot;Виды работ&quot;</value>
   </synonym>
 </mdclass:Role>

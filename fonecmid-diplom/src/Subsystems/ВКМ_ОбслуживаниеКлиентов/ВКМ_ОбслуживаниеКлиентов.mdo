@@ -12,7 +12,6 @@
   </picture>
   <content>Catalog.ВКМ_ВидыРаботПоЗаявкамКлиентов</content>
   <content>Document.ВКМ_ОбслуживаниеКлиента</content>
-  <content>Role.ВКМ_РаботаСПараметрамиРассылкиВТелеграм</content>
   <content>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы</content>
   <content>Constant.ВКМ_ТокенУправленияТелеграмБотом</content>
   <content>Constant.ВКМ_ИдентификаторГруппыОповещенияВТелеграм</content>

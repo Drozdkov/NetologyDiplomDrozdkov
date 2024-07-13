@@ -24,4 +24,7 @@
   <content>DataProcessor.ВКМ_ЗаполнениеГрафика</content>
   <content>InformationRegister.ВКМ_ГрафикРаботы</content>
   <content>AccumulationRegister.ВКМ_ВзаиморасчетыССотрудниками</content>
+  <content>Document.ВКМ_ВыплатаЗарплаты</content>
+  <content>ChartOfCalculationTypes.ВКМ_Выплаты</content>
+  <content>Document.ВКМ_ГрафикОтпусков</content>
 </mdclass:Subsystem>

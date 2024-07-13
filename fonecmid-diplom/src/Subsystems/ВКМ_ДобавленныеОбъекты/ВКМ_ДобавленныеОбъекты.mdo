@@ -33,4 +33,14 @@
   <content>DataProcessor.ВКМ_ЗаполнениеГрафика</content>
   <content>InformationRegister.ВКМ_ГрафикРаботы</content>
   <content>AccumulationRegister.ВКМ_ВзаиморасчетыССотрудниками</content>
+  <content>Document.ВКМ_ВыплатаЗарплаты</content>
+  <content>ChartOfCalculationTypes.ВКМ_Выплаты</content>
+  <content>Document.ВКМ_ГрафикОтпусков</content>
+  <content>Role.ВКМ_ВводДанныхОбОтпусках</content>
+  <content>Role.ВКМ_МассовоеСозданиеДокументовРеализацияТоваровИУслуг</content>
+  <content>Role.ВКМ_РаботаСоСправочникомВидыРабот</content>
+  <content>Role.ВКМ_РаботаСДокументомОбслуживаниеКлиентов</content>
+  <content>Role.ВКМ_ВводДанныхОбОкладахИПремиях</content>
+  <content>Role.ВКМ_ЗаполнениеДанныхГрафика</content>
+  <content>Role.ВКМ_НачислениеИВыплатаЗарплаты</content>
 </mdclass:Subsystem>

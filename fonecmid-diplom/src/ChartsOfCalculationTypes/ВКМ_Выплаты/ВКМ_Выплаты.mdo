@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ChartOfCalculationTypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f30229ad-1a3a-4b2f-b0b6-f31038bfa56b">
+  <producedTypes>
+    <objectType typeId="e6c5c094-bf3e-421d-9bb0-f503b07208bc" valueTypeId="65658b2b-3a29-4e45-923e-95a8d67a03d5"/>
+    <refType typeId="b42a2501-a381-402d-a8ec-9f11f895f449" valueTypeId="4b869dd0-901f-4175-86ed-1c7904efae4b"/>
+    <selectionType typeId="7d6998f2-e54e-414f-87bf-fcd4607fe353" valueTypeId="bdb43c4e-0bf7-4542-b399-63dc6fcccb32"/>
+    <listType typeId="b34c5f1c-4c9b-4abc-aa56-ecbacd7231d3" valueTypeId="3fda35ec-8f48-4da1-b860-9ea0814ace5e"/>
+    <managerType typeId="dd22b883-df0d-45b2-a94c-374d2393ec2f" valueTypeId="72d33e84-4c3e-4fcd-854c-0ab4e1759245"/>
+    <displacingCalculationTypesType typeId="00269249-867e-40b9-ad23-67478d83cbf5" valueTypeId="4e4eed79-8093-4bef-bb44-4dae9936ea02"/>
+    <displacingCalculationTypesRowType typeId="d4b3545a-3a5c-4cbc-b1fd-87dd84c700df" valueTypeId="a6167567-2769-4698-a24a-a894bf5d02dc"/>
+    <baseCalculationTypesType typeId="4698b3d8-3be3-4ed3-b8b4-c3effa3aeb37" valueTypeId="ec7b239f-0bb2-420e-afe7-d92bc60bbf8f"/>
+    <baseCalculationTypesRowType typeId="7c4d0276-d673-4488-bd4f-90f28a3a7486" valueTypeId="a2b9600d-2ecc-43b1-b870-e24d14a8eb48"/>
+    <leadingCalculationTypesType typeId="d96fae36-a11f-4cee-9f6b-c63d234d6956" valueTypeId="00683a69-d682-4b2d-905d-7c87b6afde48"/>
+    <leadingCalculationTypesRowType typeId="f4884116-804b-4092-81fa-43cb0b1d124e" valueTypeId="dc4be6cc-7bc3-499a-a6fc-df65ed13c26b"/>
+  </producedTypes>
+  <name>ВКМ_Выплаты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выплаты</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>ChartOfCalculationTypes.ВКМ_Выплаты.StandardAttribute.Code</inputByString>
+  <inputByString>ChartOfCalculationTypes.ВКМ_Выплаты.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>DontUse</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <codeLength>9</codeLength>
+  <descriptionLength>40</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <predefined>
+    <items id="964c63e5-9005-4a84-9986-4291fdb3164b">
+      <name>Выплата</name>
+      <description>Выплата</description>
+      <code xsi:type="core:StringValue">
+        <value>1</value>
+      </code>
+    </items>
+  </predefined>
+</mdclass:ChartOfCalculationTypes>

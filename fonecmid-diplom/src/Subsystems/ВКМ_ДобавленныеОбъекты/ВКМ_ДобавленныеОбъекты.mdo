@@ -43,4 +43,5 @@
   <content>Role.ВКМ_ВводДанныхОбОкладахИПремиях</content>
   <content>Role.ВКМ_ЗаполнениеДанныхГрафика</content>
   <content>Role.ВКМ_НачислениеИВыплатаЗарплаты</content>
+  <content>AccumulationRegister.ВКМ_ОтпускаСотрудников</content>
 </mdclass:Subsystem>

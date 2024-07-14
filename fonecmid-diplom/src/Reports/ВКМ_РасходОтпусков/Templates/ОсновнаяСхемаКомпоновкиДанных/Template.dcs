@@ -11,63 +11,50 @@
 			<field>Сотрудник</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Длительность</dataPath>
-			<field>Длительность</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ДнейОтпускаПлан</dataPath>
-			<field>ДнейОтпускаПлан</field>
+			<dataPath>ДнейЗапланировано</dataPath>
+			<field>ДнейЗапланировано</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Дней отпуска план</v8:content>
+					<v8:content>Дней запланировано</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>ДнейОтпускаФакт</dataPath>
-			<field>ДнейОтпускаФакт</field>
+			<dataPath>ДнейИспользовано</dataPath>
+			<field>ДнейИспользовано</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Дней отпуска факт</v8:content>
+					<v8:content>Дней использовано</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
-	ДанныеГрафикаПлан.Сотрудник КАК Сотрудник,
-	МАКСИМУМ(ЕСТЬNULL(ДанныеГрафикаПлан.Длительность, 0)) КАК ДнейОтпускаПлан,
-	ЕСТЬNULL(ДанныеГрафикаФакт.ДнейОтпускаФакт, 0) КАК ДнейОтпускаФакт
+	ДанныеГрафикаПланПоРегистру.Сотрудник,
+	МАКСИМУМ(ДанныеГрафикаПланПоРегистру.ДнейЗапланировано) КАК ДнейЗапланировано,
+	МАКСИМУМ(ДанныеГрафикаФактПоРегистру.ДнейИспользовано) КАК ДнейИспользовано
 ИЗ
-	(ВЫБРАТЬ РАЗЛИЧНЫЕ
-		ВКМ_ГрафикОтпусковОтпускаСотрудников.Сотрудник КАК Сотрудник,
-		СУММА(ВКМ_ГрафикОтпусковОтпускаСотрудников.Длительность) КАК Длительность
+	(ВЫБРАТЬ
+		СУММА(ЕСТЬNULL(ВКМ_ОтпускаСотрудниковОбороты.КоличествоДнейПриход, 0)) КАК ДнейЗапланировано,
+		ВКМ_ОтпускаСотрудниковОбороты.Сотрудник
 	ИЗ
-		Документ.ВКМ_ГрафикОтпусков.ОтпускаСотрудников КАК ВКМ_ГрафикОтпусковОтпускаСотрудников
-	ГДЕ
-		ВКМ_ГрафикОтпусковОтпускаСотрудников.ДатаНачала &gt;= НАЧАЛОПЕРИОДА(&amp;Дата, ГОД)
-		И ВКМ_ГрафикОтпусковОтпускаСотрудников.ДатаОкончания &lt;= КОНЕЦПЕРИОДА(&amp;Дата, ГОД)
-	
+		РегистрНакопления.ВКМ_ОтпускаСотрудников.Обороты(НАЧАЛОПЕРИОДА(&amp;Дата, ГОД), КОНЕЦПЕРИОДА(&amp;ДАТА, ГОД),,) КАК
+			ВКМ_ОтпускаСотрудниковОбороты
 	СГРУППИРОВАТЬ ПО
-		ВКМ_ГрафикОтпусковОтпускаСотрудников.Сотрудник) КАК ДанныеГрафикаПлан
-		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ РАЗЛИЧНЫЕ
-			ВКМ_ОсновныеНачисления.Сотрудник КАК Сотрудник,
-			СУММА(РАЗНОСТЬДАТ(ВКМ_ОсновныеНачисления.ПериодДействияНачало, ВКМ_ОсновныеНачисления.ПериодДействияКонец, ДЕНЬ) + 1) КАК ДнейОтпускаФакт
+		ВКМ_ОтпускаСотрудниковОбороты.Сотрудник) КАК ДанныеГрафикаПланПоРегистру
+		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			СУММА(ЕСТЬNULL(ВКМ_ОтпускаСотрудниковОбороты.КоличествоДнейРасход, 0)) КАК ДнейИспользовано,
+			ВКМ_ОтпускаСотрудниковОбороты.Сотрудник
 		ИЗ
-			РегистрРасчета.ВКМ_ОсновныеНачисления КАК ВКМ_ОсновныеНачисления
-		ГДЕ
-			ВКМ_ОсновныеНачисления.ВидРасчета = &amp;ВидРасчета
-			И ВКМ_ОсновныеНачисления.ПериодДействияНачало &gt;= НАЧАЛОПЕРИОДА(&amp;Дата, ГОД)
-			И ВКМ_ОсновныеНачисления.ПериодДействияКонец &lt;= КОНЕЦПЕРИОДА(&amp;Дата, ДЕНЬ)
-		
+			РегистрНакопления.ВКМ_ОтпускаСотрудников.Обороты(НАЧАЛОПЕРИОДА(&amp;ДАТА, ГОД), КОНЕЦПЕРИОДА(&amp;ДАТА, ДЕНЬ),,) КАК
+				ВКМ_ОтпускаСотрудниковОбороты
 		СГРУППИРОВАТЬ ПО
-			ВКМ_ОсновныеНачисления.Сотрудник) КАК ДанныеГрафикаФакт
-		ПО ДанныеГрафикаПлан.Сотрудник = ДанныеГрафикаФакт.Сотрудник
-
+			ВКМ_ОтпускаСотрудниковОбороты.Сотрудник) КАК ДанныеГрафикаФактПоРегистру
+		ПО ДанныеГрафикаПланПоРегистру.Сотрудник = ДанныеГрафикаФактПоРегистру.Сотрудник
 СГРУППИРОВАТЬ ПО
-	ДанныеГрафикаПлан.Сотрудник,
-	ЕСТЬNULL(ДанныеГрафикаФакт.ДнейОтпускаФакт, 0)</query>
+	ДанныеГрафикаПланПоРегистру.Сотрудник</query>
 	</dataSet>
 	<parameter>
 		<name>Дата</name>
@@ -87,18 +74,36 @@
 		<useRestriction>false</useRestriction>
 	</parameter>
 	<parameter>
-		<name>ВидРасчета</name>
+		<name>НачалоПериода</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Вид расчета</v8:content>
+				<v8:content>Начало периода</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
-			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCalculationTypesRef.ВКМ_ОсновныеНачисления</v8:Type>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
 		</valueType>
-		<value xsi:type="dcscor:DesignTimeValue">ПланВидовРасчета.ВКМ_ОсновныеНачисления.Отпуск</value>
-		<useRestriction>true</useRestriction>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<useRestriction>false</useRestriction>
 	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
@@ -109,10 +114,10 @@
 					<dcsset:field>Сотрудник</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДнейОтпускаПлан</dcsset:field>
+					<dcsset:field>ДнейЗапланировано</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ДнейОтпускаФакт</dcsset:field>
+					<dcsset:field>ДнейИспользовано</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>

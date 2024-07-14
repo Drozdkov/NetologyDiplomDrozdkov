@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Сотрудник</dataPath>
+			<field>Сотрудник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВидРасчета</dataPath>
+			<field>ВидРасчета</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВыплаченоЗаВыбранныйПериод</dataPath>
+			<field>ВыплаченоЗаВыбранныйПериод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выплачено за выбранный период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗадолженностьНаКонецПериода</dataPath>
+			<field>ЗадолженностьНаКонецПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задолженность на конец периода</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЗадолженностьНаНачалоПериода</dataPath>
+			<field>ЗадолженностьНаНачалоПериода</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Задолженность на начало периода</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НачисленоВВыбранномПериоде</dataPath>
+			<field>НачисленоВВыбранномПериоде</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начислено в выбранном периоде</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>УдержаноЗаВыбранныйПериод</dataPath>
+			<field>УдержаноЗаВыбранныйПериод</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удержано за выбранный период</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ РАЗЛИЧНЫЕ
+	ВКМ_ВзаиморасчетыССотрудникамиОстатки.Сотрудник КАК Сотрудник,
+	ВКМ_ВзаиморасчетыССотрудникамиОстатки.СуммаОстаток КАК СуммаОстаток
+ПОМЕСТИТЬ ЗадолженностьНаНачалоПериода
+ИЗ
+	РегистрНакопления.ВКМ_ВзаиморасчетыССотрудниками.Остатки(&amp;НачалоВыбранногоМесяца, ) КАК ВКМ_ВзаиморасчетыССотрудникамиОстатки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВКМ_ВзаиморасчетыССотрудникамиОбороты.Сотрудник КАК Сотрудник,
+	СУММА(ВКМ_ВзаиморасчетыССотрудникамиОбороты.СуммаПриход) КАК СуммаПриход
+ПОМЕСТИТЬ НачисленоВВыбранномПериоде
+ИЗ
+	РегистрНакопления.ВКМ_ВзаиморасчетыССотрудниками.Обороты(&amp;НачалоВыбранногоМесяца, &amp;КонецВыбранногоМесяца, , ) КАК ВКМ_ВзаиморасчетыССотрудникамиОбороты
+
+СГРУППИРОВАТЬ ПО
+	ВКМ_ВзаиморасчетыССотрудникамиОбороты.Сотрудник
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВКМ_ВзаиморасчетыССотрудникамиОбороты.Сотрудник КАК Сотрудник,
+	ВКМ_ВзаиморасчетыССотрудникамиОбороты.СуммаРасход КАК СуммаРасход
+ПОМЕСТИТЬ ВыплатыВВыбранномПериоде
+ИЗ
+	РегистрНакопления.ВКМ_ВзаиморасчетыССотрудниками.Обороты(ДОБАВИТЬКДАТЕ(&amp;КонецВыбранногоМесяца, СЕКУНДА, 1), ДОБАВИТЬКДАТЕ(&amp;КонецВыбранногоМесяца, МЕСЯЦ, 1), , ВидРасчета = &amp;ВидРасчетаВыплата) КАК ВКМ_ВзаиморасчетыССотрудникамиОбороты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВКМ_ВзаиморасчетыССотрудникамиОбороты.Сотрудник КАК Сотрудник,
+	ВКМ_ВзаиморасчетыССотрудникамиОбороты.СуммаРасход КАК СуммаРасход
+ПОМЕСТИТЬ УдержанияВВыбранномПериоде
+ИЗ
+	РегистрНакопления.ВКМ_ВзаиморасчетыССотрудниками.Обороты(&amp;НачалоВыбранногоМесяца, &amp;КонецВыбранногоМесяца, , ВидРасчета = &amp;ВидРасчетаНДФЛ) КАК ВКМ_ВзаиморасчетыССотрудникамиОбороты
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	ВКМ_ВзаиморасчетыССотрудникамиОстатки.Сотрудник КАК Сотрудник,
+	ВКМ_ВзаиморасчетыССотрудникамиОстатки.СуммаОстаток КАК СуммаОстаток
+ПОМЕСТИТЬ ЗадолженностьНаКонецПериода
+ИЗ
+	РегистрНакопления.ВКМ_ВзаиморасчетыССотрудниками.Остатки(ДОБАВИТЬКДАТЕ(&amp;КонецВыбранногоМесяца, МЕСЯЦ, 1), ) КАК ВКМ_ВзаиморасчетыССотрудникамиОстатки
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ
+	НачисленоВВыбранномПериоде.Сотрудник КАК Сотрудник,
+	ЕСТЬNULL(ЗадолженностьНаНачалоПериода.СуммаОстаток, 0) КАК ЗадолженностьНаНачалоПериода,
+	ЕСТЬNULL(НачисленоВВыбранномПериоде.СуммаПриход, 0) КАК НачисленоВВыбранномПериоде,
+	ЕСТЬNULL(ВыплатыВВыбранномПериоде.СуммаРасход, 0) КАК ВыплаченоЗаВыбранныйПериод,
+	ЕСТЬNULL(УдержанияВВыбранномПериоде.СуммаРасход, 0) КАК УдержаноЗаВыбранныйПериод,
+	ЕСТЬNULL(ЗадолженностьНаКонецПериода.СуммаОстаток, 0) КАК ЗадолженностьНаКонецПериода
+ИЗ
+	НачисленоВВыбранномПериоде КАК НачисленоВВыбранномПериоде
+		ЛЕВОЕ СОЕДИНЕНИЕ ЗадолженностьНаНачалоПериода КАК ЗадолженностьНаНачалоПериода
+		ПО НачисленоВВыбранномПериоде.Сотрудник = ЗадолженностьНаНачалоПериода.Сотрудник
+		ЛЕВОЕ СОЕДИНЕНИЕ ЗадолженностьНаКонецПериода КАК ЗадолженностьНаКонецПериода
+		ПО НачисленоВВыбранномПериоде.Сотрудник = ЗадолженностьНаКонецПериода.Сотрудник
+		ЛЕВОЕ СОЕДИНЕНИЕ ВыплатыВВыбранномПериоде КАК ВыплатыВВыбранномПериоде
+		ПО НачисленоВВыбранномПериоде.Сотрудник = ВыплатыВВыбранномПериоде.Сотрудник
+		ЛЕВОЕ СОЕДИНЕНИЕ УдержанияВВыбранномПериоде КАК УдержанияВВыбранномПериоде
+		ПО НачисленоВВыбранномПериоде.Сотрудник = УдержанияВВыбранномПериоде.Сотрудник</query>
+	</dataSet>
+	<parameter>
+		<name>НачалоПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>Период</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Период</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НачалоСледующегоМесяца</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало следующего месяца</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;НастройкаПериода.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>КонецПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>КонецВыбранногоМесяца</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец выбранного месяца</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;НастройкаПериода.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>КонецСледующегоМесяца</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Конец следующего месяца</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;НастройкаПериода.ДатаОкончания</expression>
+	</parameter>
+	<parameter>
+		<name>НачалоВыбранногоМесяца</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Начало выбранного месяца</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:dateTime</v8:Type>
+			<v8:DateQualifiers>
+				<v8:DateFractions>DateTime</v8:DateFractions>
+			</v8:DateQualifiers>
+		</valueType>
+		<value xsi:nil="true"/>
+		<useRestriction>true</useRestriction>
+		<expression>&amp;НастройкаПериода.ДатаНачала</expression>
+	</parameter>
+	<parameter>
+		<name>ВидРасчетаНДФЛ</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид расчета НДФЛ</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCalculationTypesRef.ВКМ_Удержания</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовРасчета.ВКМ_Удержания.НДФЛ</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>ВидРасчетаВыплата</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вид расчета выплата</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:ChartOfCalculationTypesRef.ВКМ_Выплаты</v8:Type>
+		</valueType>
+		<value xsi:type="dcscor:DesignTimeValue">ПланВидовРасчета.ВКМ_Выплаты.Выплата</value>
+		<useRestriction>true</useRestriction>
+	</parameter>
+	<parameter>
+		<name>НастройкаПериода</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Настройка периода</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>v8:StandardPeriod</v8:Type>
+		</valueType>
+		<value xsi:type="v8:StandardPeriod">
+			<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+			<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+			<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+		</value>
+		<useRestriction>false</useRestriction>
+	</parameter>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Сотрудник</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗадолженностьНаНачалоПериода</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>НачисленоВВыбранномПериоде</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВыплаченоЗаВыбранныйПериод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>УдержаноЗаВыбранныйПериод</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗадолженностьНаКонецПериода</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>НачалоПериода</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>Период</dcscor:parameter>
+					<dcscor:value xsi:type="xs:dateTime">0001-01-01T00:00:00</dcscor:value>
+					<dcsset:userSettingID>ab88ed30-faa9-4392-bfae-b9680db844c4</dcsset:userSettingID>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>КонецПериода</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+				</dcscor:item>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>НастройкаПериода</dcscor:parameter>
+					<dcscor:value xsi:type="v8:StandardPeriod">
+						<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+						<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+						<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+					</dcscor:value>
+					<dcsset:userSettingID>573415bb-90b4-4cc9-bba2-40ae139f7a86</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

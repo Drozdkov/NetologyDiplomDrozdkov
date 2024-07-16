@@ -5,7 +5,7 @@
     <id>31</id>
     <items xsi:type="form:FormField">
       <name>Период</name>
-      <id>26</id>
+      <id>33</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -16,7 +16,7 @@
       </dataPath>
       <extendedTooltip>
         <name>ПериодРасширеннаяПодсказка</name>
-        <id>28</id>
+        <id>35</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -31,7 +31,7 @@
       </extendedTooltip>
       <contextMenu>
         <name>ПериодКонтекстноеМеню</name>
-        <id>27</id>
+        <id>34</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>

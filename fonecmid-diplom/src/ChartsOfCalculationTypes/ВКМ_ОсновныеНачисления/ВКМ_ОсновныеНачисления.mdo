@@ -46,13 +46,6 @@
       </code>
       <displaced>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.Отпуск</displaced>
     </items>
-    <items id="f1bac682-3765-446b-ae84-4cbb9aa905d1">
-      <name>ПремияПроцентом</name>
-      <description>Премия процентом</description>
-      <code xsi:type="core:StringValue">
-        <value>2</value>
-      </code>
-    </items>
     <items id="50014b6d-52db-409d-85c1-bc31a2ad5025">
       <name>Отпуск</name>
       <description>Отпуск</description>
@@ -67,6 +60,13 @@
       <leading>ChartOfCalculationTypes.ВКМ_ОсновныеНачисления.ПремияПроцентом</leading>
       <leading>ChartOfCalculationTypes.ВКМ_ДополнительныеНачисления.ФиксированнаяПремия</leading>
       <leading>ChartOfCalculationTypes.ВКМ_Удержания.НДФЛ</leading>
+    </items>
+    <items id="f1bac682-3765-446b-ae84-4cbb9aa905d1">
+      <name>ПремияПроцентом</name>
+      <description>Премия процентом</description>
+      <code xsi:type="core:StringValue">
+        <value>2</value>
+      </code>
     </items>
   </predefined>
 </mdclass:ChartOfCalculationTypes>

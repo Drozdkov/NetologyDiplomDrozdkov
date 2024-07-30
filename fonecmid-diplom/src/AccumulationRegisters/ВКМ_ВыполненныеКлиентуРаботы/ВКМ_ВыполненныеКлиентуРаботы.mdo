@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="340123a2-4f9c-4333-9e6b-35b3d5358a8a">
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a2d7f655-1c6e-4df7-8b07-5cb74a862208">
   <producedTypes>
-    <selectionType typeId="b321eb60-fa23-4eee-b073-9e30d629d45a" valueTypeId="1459755e-e8ef-43a3-a43c-668b284f5d44"/>
-    <listType typeId="42e9ee58-84b9-4a8b-b67c-f4f377fea771" valueTypeId="40c9fc71-445d-4d31-8940-17b603ba9b7e"/>
-    <managerType typeId="e9ccc396-063b-421d-a320-79539f16e28c" valueTypeId="ddf3eadc-75d1-4da1-9e5a-f47a9aa85077"/>
-    <recordSetType typeId="7f5b5fcc-3017-43c3-8900-cd644daf27cb" valueTypeId="329c2a84-f683-49e4-9adf-02575ba5f1a8"/>
-    <recordKeyType typeId="ea264657-cc0a-498d-813a-ececc5499b40" valueTypeId="1ab4d283-1b9e-4d34-8d43-c0d716589f3f"/>
-    <recordType typeId="39628466-4307-457c-ba9a-6c9943fd3940" valueTypeId="41f03810-50ac-4faa-82a6-e64b3a2a3ee1"/>
-    <recordManagerType typeId="abfe3990-0cc6-4c92-99f6-893bc76d3400" valueTypeId="9807ac55-6de6-4595-bcbc-b4f33c0c3357"/>
+    <selectionType typeId="9e947208-ced3-4b0d-bd70-11bd632d971c" valueTypeId="f010549c-3b10-45a7-9dcd-d8f25f72c1d6"/>
+    <listType typeId="84c4216f-0903-4926-8cde-0069504fba78" valueTypeId="5d8c7c55-12d6-4754-81e7-7542d189ef00"/>
+    <managerType typeId="3489a9f2-986f-432d-bf8d-075c2e53dbe1" valueTypeId="8af9b4b3-c80a-4baa-b6e0-390201ddcf19"/>
+    <recordSetType typeId="7677ed4c-1107-49ac-9031-4646a479d4cb" valueTypeId="65e23b5e-7b2e-4065-9b2f-fa7e27f4c6d7"/>
+    <recordKeyType typeId="002b33fe-f8d2-4336-bf81-b5f1b074af68" valueTypeId="d6fa6776-68d7-4c17-9744-e2ae1aa15056"/>
+    <recordType typeId="416e31e1-6104-48b7-8d3a-7a854220dd44" valueTypeId="a4a1ec98-7ce4-4270-983f-fd7fa6f706eb"/>
   </producedTypes>
   <name>ВКМ_ВыполненныеКлиентуРаботы</name>
   <synonym>
@@ -15,13 +14,9 @@
     <value>Выполненные клиенту работы</value>
   </synonym>
   <useStandardCommands>true</useStandardCommands>
-  <editType>InDialog</editType>
-  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
-  <writeMode>RecorderSubordinate</writeMode>
   <dataLockControlMode>Managed</dataLockControlMode>
-  <enableTotalsSliceFirst>true</enableTotalsSliceFirst>
-  <enableTotalsSliceLast>true</enableTotalsSliceLast>
-  <resources uuid="c22acec3-f828-4a54-856c-9a0edd445bca">
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="917ac615-323f-4ca4-a0f2-17a9309e1d09">
     <name>КоличествоЧасов</name>
     <synonym>
       <key>ru</key>
@@ -38,10 +33,8 @@
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:UndefinedValue"/>
   </resources>
-  <resources uuid="d947054f-870d-4ef8-874d-744e744238cc">
+  <resources uuid="7c939fa4-2d5f-4f09-a523-41b168854730">
     <name>СуммаКОплате</name>
     <synonym>
       <key>ru</key>
@@ -53,10 +46,8 @@
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:UndefinedValue"/>
   </resources>
-  <attributes uuid="2f149211-e0ae-488f-a722-c80f42b4c2c1">
+  <attributes uuid="2cdabe79-76df-4a55-ad12-c18109949f62">
     <name>Комментарий</name>
     <synonym>
       <key>ru</key>
@@ -71,10 +62,8 @@
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:UndefinedValue"/>
   </attributes>
-  <dimensions uuid="3fa58801-9eb5-4cc3-9b2f-916125bf2624">
+  <dimensions uuid="9fab6a4c-1060-4da9-943d-e8eac424a587">
     <name>Клиент</name>
     <synonym>
       <key>ru</key>
@@ -86,11 +75,8 @@
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <mainFilter>true</mainFilter>
   </dimensions>
-  <dimensions uuid="78fa305d-dac7-44fd-ab83-ad18ac69cf46">
+  <dimensions uuid="834b1ab7-d03d-4ad2-a65c-ebd3d4bd2300">
     <name>Договор</name>
     <synonym>
       <key>ru</key>
@@ -102,11 +88,8 @@
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <mainFilter>true</mainFilter>
   </dimensions>
-  <dimensions uuid="8519cda8-2cce-463d-9ee3-4a393bfeb56d">
+  <dimensions uuid="6042d303-c83a-4856-99a2-89330c7926dc">
     <name>ВидРабот</name>
     <synonym>
       <key>ru</key>
@@ -118,8 +101,5 @@
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:UndefinedValue"/>
-    <mainFilter>true</mainFilter>
   </dimensions>
-</mdclass:InformationRegister>
+</mdclass:AccumulationRegister>

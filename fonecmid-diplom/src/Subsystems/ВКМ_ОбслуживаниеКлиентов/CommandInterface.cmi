@@ -6,8 +6,14 @@
       <visible/>
     </visibilityFragments>
     <visibilityFragments>
-      <command>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы.StandardCommand.OpenList</command>
+      <command>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы_Удалить.StandardCommand.OpenList</command>
       <visible/>
+    </visibilityFragments>
+    <visibilityFragments>
+      <command>AccumulationRegister.ВКМ_ВыполненныеКлиентуРаботы.StandardCommand.OpenList</command>
+      <visible>
+        <common>true</common>
+      </visible>
     </visibilityFragments>
   </commandsVisibility>
   <commandsPlacement>
@@ -28,7 +34,7 @@
     <orderFragments>
       <group>NavigationPanelOrdinary</group>
       <commands>Catalog.ВКМ_УведомленияВТелеграм.StandardCommand.OpenList</commands>
-      <commands>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы.StandardCommand.OpenList</commands>
+      <commands>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы_Удалить.StandardCommand.OpenList</commands>
     </orderFragments>
     <orderFragments>
       <group>NavigationPanelImportant</group>

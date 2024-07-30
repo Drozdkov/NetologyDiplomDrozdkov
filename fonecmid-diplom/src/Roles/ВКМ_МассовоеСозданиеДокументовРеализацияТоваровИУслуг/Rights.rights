@@ -191,7 +191,7 @@
 		</right>
 	</object>
 	<object>
-		<name>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы</name>
+		<name>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы_Удалить</name>
 		<right>
 			<name>Read</name>
 			<value>true</value>

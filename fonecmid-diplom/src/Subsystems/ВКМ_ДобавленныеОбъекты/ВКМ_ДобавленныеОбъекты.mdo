@@ -11,7 +11,7 @@
   <content>Catalog.ВКМ_ВидыРаботПоЗаявкамКлиентов</content>
   <content>Catalog.ВКМ_ОбслуживаниеКлиентаПрисоединенныеФайлы</content>
   <content>Role.ВКМ_РаботаСПараметрамиРассылкиВТелеграм</content>
-  <content>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы</content>
+  <content>InformationRegister.ВКМ_ВыполненныеКлиентуРаботы_Удалить</content>
   <content>Constant.ВКМ_ТокенУправленияТелеграмБотом</content>
   <content>Constant.ВКМ_ИдентификаторГруппыОповещенияВТелеграм</content>
   <content>Catalog.ВКМ_УведомленияВТелеграм</content>
@@ -48,4 +48,5 @@
   <content>Role.ВКМ_РаботаСОтчетомАнализВыставленныхАктов</content>
   <content>Role.ВКМ_РаботаСОтчетамиПоЗарплатеИОтпускам</content>
   <content>Role.ВКМ_РаботаСОтчетомВыработкаСпециалистов</content>
+  <content>AccumulationRegister.ВКМ_ВыполненныеКлиентуРаботы</content>
 </mdclass:Subsystem>
